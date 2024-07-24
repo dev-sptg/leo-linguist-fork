@@ -6,13 +6,7 @@
     <string>leo</string>
     <key>scopeName</key>
     <string>source.leo</string>
-    <key>scope</key>
-    <string>source.leo</string>
     <key>fileTypes</key>
-    <array>
-      <string>leo</string>
-    </array>
-    <key>extension</key>
     <array>
       <string>leo</string>
     </array>

@@ -3,10 +3,9 @@ import path from "path";
 import plist from "plist";
 
 (async () => {
-  const prepareJSONforYaml = (json) => {
+  const prepareJSONforPlist = (json) => {
     delete json["extension"];
     delete json["scope"];
-    json["fileTypes"] = ["leo"];
     return json;
   } 
   const expectationsFileJSON = path.join(
@@ -31,7 +30,7 @@ import plist from "plist";
     tmLanguageExpectationFile,
     { encoding: "utf8" }
   );
-  const plistContent = plist.build(JSON.parse(content));
+  const plistContent = plist.build(prepareJSONforPlist(JSON.parse(content)));
   await fs.promises.writeFile(
     expectationsFileJSON,
     content,
